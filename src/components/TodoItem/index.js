@@ -2,8 +2,7 @@ import './index.css'
 
 const TodoItem = props => {
   const {simpleTodos, key, onDeleteItem} = props
-  const {title} = simpleTodos
-  const {id} = key
+  const {title, id} = simpleTodos
 
   const onDelete = () => {
     onDeleteItem(id)

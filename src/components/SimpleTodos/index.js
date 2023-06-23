@@ -41,7 +41,8 @@ class SimpleTodos extends Component {
   state = {simpleTodosList: initialTodosList}
 
   onDeleteItem = id => {
-    console.log(`delete triggered ${id}`)
+    const filteredData = simpleTodosList.filter(each => each.id === id)
+    this.setState({simpleTodosList: filteredData})
   }
 
   render() {
@@ -63,4 +64,5 @@ class SimpleTodos extends Component {
     )
   }
 }
+
 export default SimpleTodos
