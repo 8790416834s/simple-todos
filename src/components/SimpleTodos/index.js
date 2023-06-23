@@ -1,5 +1,5 @@
 import {Component} from 'react'
-import TodoItem from './components/TodoItem'
+import TodoItem from '../TodoItem'
 import './index.css'
 
 const initialTodosList = [
@@ -37,17 +37,30 @@ const initialTodosList = [
   },
 ]
 
-const SimpleTodos = () => {
-  return (
-    <div className="card-container">
-      <h1 className="heading">Simple Todos</h1>
-      <ul>
-        {simpleTodosList.map(eachTodo => (
-          <TodoItem simpleTodos={eachTodo} key={eachTodo.id} />
-        ))}
-      </ul>
-    </div>
-  )
-}
+class SimpleTodos extends Component {
+  state = {simpleTodosList: initialTodosList}
 
+  onDeleteItem = id => {
+    console.log(`delete triggered ${id}`)
+  }
+
+  render() {
+    const {simpleTodosList} = this.state
+
+    return (
+      <div className="card-container">
+        <h1 className="heading">Simple Todos</h1>
+        <ul>
+          {simpleTodosList.map(eachTodo => (
+            <TodoItem
+              onDeleteItem={this.onDeleteItem}
+              simpleTodos={eachTodo}
+              key={eachTodo.id}
+            />
+          ))}
+        </ul>
+      </div>
+    )
+  }
+}
 export default SimpleTodos

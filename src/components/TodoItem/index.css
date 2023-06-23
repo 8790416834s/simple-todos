@@ -1,1 +1,14 @@
-/* Write your CSS here */
+.item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.paragraph {
+  font-family: 'Roboto';
+}
+.delete-btn {
+  background-color: #ffffff;
+  color: #ff0b37;
+  width: 60px;
+  height: 25px;
+}

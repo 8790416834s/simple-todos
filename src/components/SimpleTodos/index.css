@@ -1,7 +1,9 @@
 .card-container {
   background-color: #ffffff;
-  height: 70vh;
+  height: 80vh;
   width: 70vw;
+  text-align: center;
+  padding: 50px;
 }
 
 .heading {

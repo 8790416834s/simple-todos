@@ -1,16 +1,20 @@
 import './index.css'
 
 const TodoItem = props => {
-  const {simpleTodos, key} = props
+  const {simpleTodos, key, onDeleteItem} = props
   const {title} = simpleTodos
   const {id} = key
 
+  const onDelete = () => {
+    onDeleteItem(id)
+  }
+
   return (
-    <li>
-      <p>{title}</p>
-      <div>
-        <button type="button">Delete</button>
-      </div>
+    <li className="item-container">
+      <p className="paragraph">{title}</p>
+      <button type="button" className="delete-btn" onClick={onDelete}>
+        Delete
+      </button>
     </li>
   )
 }
